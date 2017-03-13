@@ -6,55 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
-    
-      <figure class="icons">
-        <canvas id="clear-day" width="64" height="64">
-        </canvas>
-
-        <canvas id="clear-night" width="64" height="64">
-        </canvas>
-
-        <canvas id="partly-cloudy-day" width="64" height="64">
-        </canvas>
-
-        <canvas id="partly-cloudy-night" width="64" height="64">
-        </canvas>
-
-        <canvas id="cloudy" width="64" height="64">
-        </canvas>
-
-        <canvas id="rain" width="64" height="64">
-        </canvas>
-
-        <canvas id="sleet" width="64" height="64">
-        </canvas>
-
-        <canvas id="snow" width="64" height="64">
-        </canvas>
-
-        <canvas id="wind" width="64" height="64">
-        </canvas>
-
-        <canvas id="fog" width="64" height="64">
-        </canvas>
-      </figure>
-      <script>
-      var icons = new Skycons(),
-          list  = [
-            "clear-day", "clear-night", "partly-cloudy-day",
-            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-            "fog"
-          ],
-          i;
-
-      for(i = list.length; i--; )
-        icons.set(list[i], list[i]);
-
-      icons.play();
-    </script>
+     <section class="loader">
+            <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </section>
+    <section class="container">
+        <h1 class="location"></h1>
+        <h2 class="temperature"></h2>
+            <div class="cloud">
+            </div>
+    </section>
     <script src="js/main.js"></script>
-    <script src="js/skycons.js"></script>
 </body>
 </html>
