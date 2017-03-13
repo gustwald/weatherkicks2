@@ -1,0 +1,12 @@
+figure {
+    margin: 3em auto;
+    width: 368px;
+    height: 152px;
+}
+
+canvas {
+    display: block;
+    float: left;
+    margin-left: 8px;
+    margin-top: 8px;
+}
