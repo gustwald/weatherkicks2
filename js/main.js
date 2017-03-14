@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
             var date = base.formatDate(weather.currently.time);
             var temperature = Math.round(weather.currently.temperature);
-            var weatherIcons = weather.currently.icon;
+            var weatherIcons = weather.hourly.icon;
             var summary = weather.currently.summary;
             var icons = [
                 "clear-day",
@@ -20,7 +20,7 @@ $( document ).ready(function() {
             ]
             var badWeather = [
                 "Don't flex your AF1's today.",
-                "I wouldn't go out with your OG's today.",
+                "I wouldn't go out with your OG's.",
                 "Get your beaters.",
                 "Your kick will get dirty.",
                 "Stay inside if you wanna flex.",
@@ -50,7 +50,7 @@ $( document ).ready(function() {
 
             if(weatherIcons.includes("night")){
                 $(".tips").text(randomNightTip);
-            }else if(weatherIcons.includes("rain sleet snow")){
+            }else if(weatherIcons.includes("rain") || weatherIcons.includes("snow") || weatherIcons.includes("sleet")){
                 $(".tips").text(randomBadTip);
             }else{
                 $(".tips").text(randomGoodTip);
