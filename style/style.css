@@ -29,12 +29,14 @@ body{
   height: 80px;
   width: 80px;
   margin: 20px;
-  background-image: url('../img/wklogo.svg');
+  background-image: url('../img/wklogo2.svg');
+  background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   left:0;
   top: 0;
 }
+
 .container{
     margin: auto;
     width: 70%;
@@ -54,14 +56,50 @@ h1,h2,h3,h4{
 h1{
   font-size: 60px;
 }
-.partly-cloudy-night{
+.tips{
+  margin: 2em 0 0 0;
+}
+.output{
     margin: 0 auto;
     height: 200px;
     width: 200px;
-    background-image: url('../icons/cloudy.svg');
     background-size: contain;
     background-repeat: no-repeat;
 }
+.clear-night{
+    background-image: url('../icons/night.svg');
+}
+.clear-day{
+    background-image: url('../icons/day.svg');
+}
+
+.partly-cloudy-day{
+    background-image: url('../icons/cloudy-day-3.svg');
+}            
+
+.partly-cloudy-night{
+    background-image: url('../icons/cloudy-night-3.svg');
+}
+.cloudy{
+    background-image: url('../icons/cloudy.svg');
+}
+.rain{
+    background-image: url('../icons/rainy-6.svg');
+}
+.sleet{
+    background-image: url('../icons/rainy-7.svg');
+}
+.snow{
+    background-image: url('../icons/snowy-5.svg');
+}
+.wind{
+    background-image: url('../icons/cloudy.svg');
+}
+.fog{
+    background-image: url('../icons/cloudy.svg');
+}     
+               
+            
 .timeline{
     margin: 0 auto;
     width: 90%;

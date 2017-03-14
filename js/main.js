@@ -5,7 +5,23 @@ $( document ).ready(function() {
             var date = base.formatDate(weather.currently.time);
             var temperature = Math.round(weather.currently.temperature);
             var summary = weather.currently.summary;
-        
+            var icons = [
+                "clear-day",
+                "clear-night",
+                "partly-cloudy-day",
+                "partly-clody-night",
+                "cloudy",
+                "rain",
+                "sleet",
+                "snow",
+                "wind",
+                "fog"
+            ]
+    
+            if(icons.indexOf(weather.currently.icon) > -1);{    
+                $(".output").addClass(weather.currently.icon);
+            }
+            
             $(".container").fadeIn("slow");
             $(".loader").fadeOut("fast");
             $('.temperature').html(temperature + '&#8451;, ' + summary);
