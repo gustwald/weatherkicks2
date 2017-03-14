@@ -1,4 +1,15 @@
 $( document ).ready(function() {
+
+        $(".logobutton").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".container").offset().top
+        }, 1000);
+    });
+    $(".scrollbtn").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".sections").offset().top
+        }, 1000);
+    });
     base.getCoordinates().then(function(coordinates){
         base.getWeather(coordinates.coords).then(function(weather){
 
@@ -22,13 +33,13 @@ $( document ).ready(function() {
                 "Don't flex your AF1's today.",
                 "I wouldn't go out with your OG's.",
                 "Get your beaters.",
-                "Your kick will get dirty.",
+                "Your kicks will get dirty.",
                 "Stay inside if you wanna flex.",
                 "Stay inside."
             ]
             var goodWeather = [
-                "Your shoes are fine today.",
-                "Flex your OG's today.",
+                "Your shoes are fine.",
+                "Flex your OG's.",
                 "Suns out, grails out.",
                 "Good condition for flexing."
             ]
@@ -65,7 +76,7 @@ $( document ).ready(function() {
                if(key < 7){
                  $('.timeline').append('<li class="li hour"><div class="timestamp"><span class="time">'+base.formatDate(value.time) + '</span></div><div class="status"><span class="degree">'+ Math.round(value.temperature) +'&deg;C</span></div>');
                }
-        });
+            });
 
             console.log(weather);
             console.log(date);
