@@ -35,6 +35,9 @@ body{
   left:0;
   top: 0;
 }
+.logo:hover{
+  opacity: 0.8;
+}
 
 .container{
     margin: auto;
@@ -98,7 +101,7 @@ h1{
     background-image: url('../icons/snowy-5.svg');
 }
 .wind{
-    background-image: url('../icons/cloudy.svg');
+    background-image: url('../icons/cloudy-day-1.svg');
 }
 .fog{
     background-image: url('../icons/cloudy.svg');

@@ -15,7 +15,7 @@ $( document ).ready(function() {
 
             var date = base.formatDate(weather.currently.time);
             var temperature = Math.round(weather.currently.temperature);
-            var weatherIcons = weather.hourly.icon;
+            var weatherIcons = weather.currently.icon;
             var summary = weather.hourly.summary;
             var icons = [
                 "clear-day",
