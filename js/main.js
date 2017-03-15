@@ -70,7 +70,7 @@ $( document ).ready(function() {
             
             $(".container").fadeIn("slow");
             $(".loader").fadeOut("fast");
-            $('.temperature').html(temperature + '&deg;C, ' + summary);
+            $('.temperature').html('<strong>' + temperature + '&deg;C</strong>, ' + summary);
 
             $.each(weather.hourly.data, function( key, value ) {
                if(key < 7){

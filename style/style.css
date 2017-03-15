@@ -65,6 +65,7 @@ h1{
 .tips{
   margin: 1.5em 0 0 0;
   font-size: 45px;
+  font-family: 'Roboto',sans-serif;
 }
 .output{
     margin: 0 auto;
