@@ -16,12 +16,12 @@ $( document ).ready(function() {
             var date = base.formatDate(weather.currently.time);
             var temperature = Math.round(weather.currently.temperature);
             var weatherIcons = weather.currently.icon;
-            var summary = weather.hourly.summary;
+            var summary = weather.currently.summary;
             var icons = [
                 "clear-day",
                 "clear-night",
                 "partly-cloudy-day",
-                "partly-clody-night",
+                "partly-cloudy-night",
                 "cloudy",
                 "rain",
                 "sleet",
