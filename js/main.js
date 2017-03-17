@@ -83,7 +83,7 @@ $( document ).ready(function() {
         })
         base.getLocation(coordinates.coords).then(function(location){
             console.log(location);
-            var region = location.results[3].formatted_address;
+            var region = location.results[1].formatted_address;
 
             $('.location').text(region);
         })
