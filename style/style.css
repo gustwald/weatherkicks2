@@ -80,7 +80,7 @@ h1{
     background-image: url('../icons/night.svg');
 }
 .clear-day{
-    background-image: url('../icons/day.svg');
+    background-image: url('../icons/cloudy-day-1.svg');
 }
 
 .partly-cloudy-day{
@@ -173,6 +173,7 @@ h1{
   font-weight: 100;
   }
 .status{
+  width: 30px;
   padding: 0px 40px;
   display: flex;
   justify-content: center;
@@ -242,6 +243,30 @@ h1{
 		transform: rotate(-45deg) translate(-20px, 20px);
 		opacity: 0;
 	}
+}
+
+.change {
+    position: absolute;
+    top: 0;
+    left: 90%;
+    margin: 10px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid orange;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.change:hover {
+    background-color: orange;
+    color: black;
 }
 
 @media only screen and (max-width: 700px) {

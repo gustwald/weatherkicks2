@@ -21,6 +21,17 @@ var base = {};
                 }
             });
         },
+        getWeatherFarenheit: function(coordinates){
+           return $.ajax({
+                method: 'GET',
+                contentType: 'application/json; charset=UTF-8',
+                url:'https://api.darksky.net/forecast/7a8e4836a4e6c4de8c0f59e22b24ba9b/'+ coordinates.latitude + ',' + coordinates.longitude,
+                error: function(error) {
+                $(".output").text("Something unexpected happened while trying to retrieve the weather");
+                console.log(error);
+                }
+            });
+        },
         getLocation: function(coordinates){
            return $.ajax({
                 method: 'GET',

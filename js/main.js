@@ -70,7 +70,8 @@ $( document ).ready(function() {
             
             $(".container").fadeIn("slow");
             $(".loader").fadeOut("fast");
-            $('.temperature').html('<strong>' + temperature + '&deg;C</strong>, ' + summary);
+            $('.temperature').html('<strong>' + temperature + '&deg;C</strong>, ');
+            $('.summary').html(summary);
 
             $.each(weather.hourly.data, function( key, value ) {
                if(key < 7){
@@ -83,10 +84,29 @@ $( document ).ready(function() {
         })
         base.getLocation(coordinates.coords).then(function(location){
             console.log(location);
-            var region = location.results[1].formatted_address;
+            var region = location.results[3].formatted_address;
 
             $('.location').text(region);
         })
+        $('.change').bind('click', function() {
+        base.getCoordinates().then(function(coordinates){
+            base.getWeatherFarenheit(coordinates.coords).then(function(weatherFarenheit){
+
+            console.log(weatherFarenheit);
+            $.each(weatherFarenheit.hourly.data, function( key, value ) {
+               if(key < 7){
+                
+                $('.degree').add('.temperature').fadeOut(1000, function(){
+                    $('.degree').empty().html(Math.round(value.temperature) + '&deg;F').fadeIn();
+                    $('.temperature').empty().html('<strong>' + Math.round(value.temperature) + '&deg;F </strong>').fadeIn();
+                });
+                
+               }
+            });
+                })
+            })
+        });
     })
 });
 
+       
