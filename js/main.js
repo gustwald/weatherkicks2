@@ -93,7 +93,7 @@ $( document ).ready(function() {
             base.getWeatherFarenheit(coordinates.coords).then(function(weatherFarenheit){
 
             $('.temperature').fadeOut(1000, function(){
-            $('.temperature').empty().append('<strong>' + Math.round(weatherFarenheit.currently.temperature) + '&deg;F </strong>,').fadeIn();
+            $('.temperature').empty().append('<strong>' + Math.round(weatherFarenheit.currently.temperature) + '&deg;F, </strong>').fadeIn();
                 })
 
             $.each(weatherFarenheit.hourly.data, function( key, value ) {
