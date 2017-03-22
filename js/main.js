@@ -75,7 +75,7 @@ $( document ).ready(function() {
 
             $.each(weather.hourly.data, function( key, value ) {
                if(key < 7){
-                 $('.timeline').append('<li class="li hour"><div class="timestamp"><span class="time">'+base.formatDate(value.time) + '</span></div><div class="status"><span class="degree">'+ Math.round(value.temperature) +'&deg;C</span></div>');
+                 $('.timeline').append('<li class="li hour"><div class="timestamp"><span class="time">'+base.formatDate(value.time) + '</span></div><div class="status"><span class="degree">'+ Math.round(value.temperature) +'&deg;C</span></div></li>');
                }
             });
 
@@ -92,14 +92,15 @@ $( document ).ready(function() {
         base.getCoordinates().then(function(coordinates){
             base.getWeatherFarenheit(coordinates.coords).then(function(weatherFarenheit){
 
-            console.log(weatherFarenheit);
+            $('.temperature').fadeOut(1000, function(){
+            $('.temperature').empty().append('<strong>' + Math.round(weatherFarenheit.currently.temperature) + '&deg;F </strong>,').fadeIn();
+                })
+
             $.each(weatherFarenheit.hourly.data, function( key, value ) {
                if(key < 7){
-                
-                $('.degree').add('.temperature').fadeOut(1000, function(){
-                    $('.degree').empty().html(Math.round(value.temperature) + '&deg;F').fadeIn();
-                    $('.temperature').empty().html('<strong>' + Math.round(value.temperature) + '&deg;F </strong>').fadeIn();
-                });
+                 $('.degree').fadeOut(1000, function(){
+                    $('.degree').eq(key).empty().append(Math.round(value.temperature) + '&deg;F').fadeIn();
+                 });
                 
                }
             });
