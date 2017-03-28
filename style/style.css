@@ -380,8 +380,8 @@ h1{
 
 .change {
     position: absolute;
-    top: 5%;
-    left: 95%;
+    top: 0%;
+    left: 87%;
     margin: 20px;
     background:none;
     border:none;
@@ -390,7 +390,9 @@ h1{
     text-decoration: none;
     display: inline-block;
     font-family: 'lato',sans-serif;
-    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 14px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -408,11 +410,18 @@ h1{
     }
     .tips{
         text-align: center;
-        font-size: 30px;
+        font-size: 25px;
     }
     .logo{
       width:50px;
       height: 50px;
       margin: 5px;
+    }
+    .timeline li:nth-last-child(-n+4) {
+      display:none;
+    }
+    .change{
+      font-size: 10;
+      left: 80%;
     }
 }

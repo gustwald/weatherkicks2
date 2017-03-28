@@ -1,15 +1,15 @@
 $( document ).ready(function() {
 
-        $(".logobutton").click(function() {
-        $('html, body').animate({
-            scrollTop: $(".container").offset().top
-        }, 1000);
-    });
-    $(".scrollbtn").click(function() {
-        $('html, body').animate({
-            scrollTop: $(".sections").offset().top
-        }, 1000);
-    });
+    //     $(".logobutton").click(function() {
+    //     $('html, body').animate({
+    //         scrollTop: $(".container").offset().top
+    //     }, 1000);
+    // });
+    // $(".scrollbtn").click(function() {
+    //     $('html, body').animate({
+    //         scrollTop: $(".sections").offset().top
+    //     }, 1000);
+    // });
     base.getCoordinates().then(function(coordinates){
         base.getWeather(coordinates.coords).then(function(weather){
 
@@ -95,8 +95,7 @@ $( document ).ready(function() {
         base.getCoordinates().then(function(coordinates){
             base.getWeatherFarenheit(coordinates.coords).then(function(weatherFarenheit){
                 $('.sk-circle').fadeOut();
-                $('.change').fadeIn();
-            $('.change').text('°C');
+
             $('.temperature').fadeOut(1000, function(){
             $('.temperature').empty().append('<strong>' + Math.round(weatherFarenheit.currently.temperature) + '&deg;F, </strong>').fadeIn();
                 })
