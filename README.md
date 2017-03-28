@@ -12,7 +12,7 @@ Improvements:
 * Faster loadtime(remove unused data from response)
 * Cleaner code
 
-[Live](https://www.google.com)
+[Live](https://gustwald.github.io/weatherkicks2/)
 
 ***
 #### Gustav Sundström, javascript2, Frontend
