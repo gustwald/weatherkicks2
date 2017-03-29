@@ -15,7 +15,7 @@ var base = {};
                 method: 'GET',
                 contentType: 'application/json; charset=UTF-8',
                 headers: {
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin' : '*'
                 },
                 url:'https://api.darksky.net/forecast/7a8e4836a4e6c4de8c0f59e22b24ba9b/'+ coordinates.latitude + ',' + coordinates.longitude + '?units=si',
                 error: function(error) {
@@ -29,7 +29,7 @@ var base = {};
                 method: 'GET',
                 contentType: 'application/json; charset=UTF-8',
                 headers: {
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin' : '*'
                 },
                 url:'https://api.darksky.net/forecast/7a8e4836a4e6c4de8c0f59e22b24ba9b/'+ coordinates.latitude + ',' + coordinates.longitude,
                 error: function(error) {
@@ -43,7 +43,7 @@ var base = {};
                 method: 'GET',
                 contentType: 'application/json; charset=UTF-8',
                 headers: {
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin' : '*'
                 },
                 url:'https://maps.googleapis.com/maps/api/geocode/json?latlng='+ coordinates.latitude+', '+coordinates.longitude+'&key=AIzaSyA5dwgsUmb4x3b3DkVE92mrGWG72KCyHrg',
                 error: function(error) {
