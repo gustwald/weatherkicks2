@@ -1,15 +1,7 @@
 $( document ).ready(function() {
-
-    //     $(".logobutton").click(function() {
-    //     $('html, body').animate({
-    //         scrollTop: $(".container").offset().top
-    //     }, 1000);
-    // });
-    // $(".scrollbtn").click(function() {
-    //     $('html, body').animate({
-    //         scrollTop: $(".sections").offset().top
-    //     }, 1000);
-    // });
+    //First get coordinates and as promise and when we got that we run the getweather function which uses coordinates
+    //latitude and longitude. We cannot use the getweather function without the coordinates, so its important we get those First
+    //therefore we use a promise.
     base.getCoordinates().then(function(coordinates){
         base.getWeather(coordinates.coords).then(function(weather){
 
@@ -53,12 +45,14 @@ $( document ).ready(function() {
             var randomBadTip = badWeather[Math.floor(Math.random()*badWeather.length)];
             var randomNightTip = nightTime[Math.floor(Math.random()*nightTime.length)];
 
+            //checks which icon the weatherdata currently has and adds that to class
             if(icons.indexOf(weatherIcons) > -1){    
                 $(".output").addClass(weatherIcons);
             }else{
                 $(".output").text("Sorry, we could not find any weather :()");
             }
 
+            //decides which output the app should have
             if(weatherIcons.includes("night")){
                 $(".tips").text(randomNightTip);
             }else if(weatherIcons.includes("rain") || weatherIcons.includes("snow") || weatherIcons.includes("sleet")){
@@ -66,48 +60,43 @@ $( document ).ready(function() {
             }else{
                 $(".tips").text(randomGoodTip);
             }
-            
-            
+             
             $(".container").fadeIn("slow");
             $(".loader").fadeOut("fast");
             $('.temperature').html('<strong>' + temperature + '&deg;C</strong>, ');
             $('.summary').html(summary);
-
+            //Creates the timeline for weather coming 7 hours.
             $.each(weather.hourly.data, function( key, value ) {
                if(key < 7){
                  $('.timeline').append('<li class="li hour"><div class="timestamp"><span class="time">'+base.formatDate(value.time) + '</span></div><div class="status"><span class="degree">'+ Math.round(value.temperature) +'&deg;C</span></div></li>');
                }
             });
-
-            console.log(weather);
-            console.log(date);
         })
+        //gets location and prints out to html
         base.getLocation(coordinates.coords).then(function(location){
-            console.log(location);
             var region = location.results[3].formatted_address;
-
             $('.location').text(region);
         })
+        //button which makes a new request to get the weather-response in farenheit degrees instead of celcius.
         $('.change').bind('click', function() {
              $('.change').fadeOut();
-            $('.sk-circle').fadeIn();
+             $('.sk-circle').fadeIn();
         
-        base.getCoordinates().then(function(coordinates){
-            base.getWeatherFarenheit(coordinates.coords).then(function(weatherFarenheit){
+             base.getCoordinates().then(function(coordinates){
+                base.getWeatherFarenheit(coordinates.coords).then(function(weatherFarenheit){
                 $('.sk-circle').fadeOut();
 
-            $('.temperature').fadeOut(1000, function(){
-            $('.temperature').empty().append('<strong>' + Math.round(weatherFarenheit.currently.temperature) + '&deg;F, </strong>').fadeIn();
+                $('.temperature').fadeOut(1000, function(){
+                $('.temperature').empty().append('<strong>' + Math.round(weatherFarenheit.currently.temperature) + '&deg;F, </strong>').fadeIn();
                 })
 
-            $.each(weatherFarenheit.hourly.data, function( key, value ) {
-               if(key < 7){
-                 $('.degree').fadeOut(1000, function(){
-                    $('.degree').eq(key).empty().append(Math.round(value.temperature) + '&deg;F').fadeIn();
-                 });
-                
-               }
-            });
+                $.each(weatherFarenheit.hourly.data, function( key, value ) {
+                            if(key < 7){
+                            $('.degree').fadeOut(1000, function(){
+                            $('.degree').eq(key).empty().append(Math.round(value.temperature) + '&deg;F').fadeIn();
+                         });
+                        }
+                    });
                 })
             })
         });

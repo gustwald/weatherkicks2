@@ -1,7 +1,7 @@
+//immediately invoked function base so that we can use the functions when document is ready.
 var base = {};
 (function (){
     'use strict';
-    
     base = {
         getCoordinates: function(){
             var def = $.Deferred(); 
@@ -43,6 +43,8 @@ var base = {};
                 }
             });
         },
+        //we get the time as a unix timestamp so we have to convert this.
+        //http://stackoverflow.com/a/847196
         formatDate: function(timestamp){
             var date = new Date(timestamp*1000);
             var hours = date.getHours();
