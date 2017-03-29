@@ -52,7 +52,7 @@ var base = {};
                 }
             });
         },
-        //we get the time as a unix timestamp so we have to convert this.
+        //we get the time as a timestamp so we have to convert this.
         //http://stackoverflow.com/a/847196
         formatDate: function(timestamp){
             var date = new Date(timestamp*1000);
