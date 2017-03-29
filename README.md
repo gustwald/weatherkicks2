@@ -12,6 +12,7 @@ Improvements:
 * Cache weather
 * Faster loadtime(remove unused data from response)
 * Cleaner code
+* Function for all html manipulation
 
 [Live](https://gustwald.github.io/weatherkicks2/)
 
